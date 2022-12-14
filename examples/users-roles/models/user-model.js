@@ -24,11 +24,13 @@ class User extends ModelBase {
       index:        true,
     },
     firstName: {
+      columnName:   'first_name',
       type:         Types.STRING(32),
       allowNull:    true,
       index:        true,
     },
     lastName: {
+      columnName:   'last_name',
       type:         Types.STRING(32),
       allowNull:    true,
       index:        true,

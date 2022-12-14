@@ -11,12 +11,14 @@ class ModelBase extends Model {
   // Common fields that all models have
   static fields = {
     createdAt: {
+      columnName:   'created_at',
       type:         Types.DATETIME,
       defaultValue: Types.DATETIME.Default.NOW,
       allowNull:    false,
       index:        true,
     },
     updatedAt: {
+      columnName:   'updated_at',
       type:         Types.DATETIME,
       defaultValue: Types.DATETIME.Default.NOW.UPDATE,
       allowNull:    false,

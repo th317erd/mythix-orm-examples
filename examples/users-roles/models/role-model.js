@@ -13,6 +13,7 @@ class Role extends ModelBase {
       primaryKey:   true,
     },
     userID: {
+      columnName:   'user_id',
       type:         Types.FOREIGN_KEY('User:id', {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',

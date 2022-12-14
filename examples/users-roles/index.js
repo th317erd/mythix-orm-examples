@@ -3,6 +3,29 @@
 const { SQLiteConnection } = require('mythix-orm-sqlite');
 const Models = require('./models');
 
+// Entry point
+(async function() {
+  console.log('Creating connection...');
+
+  let connection = new SQLiteConnection({
+    models: Models,
+    // logger: console, // uncomment this to see all SQL statements sent to the database
+  });
+
+  try {
+    console.log('Starting connection...');
+    await connection.start();
+
+    console.log('Creating tables in the database...');
+    await connection.createTables(Models);
+
+    await main(connection);
+  } finally {
+    console.log('Stopping the connection...');
+    await connection.stop();
+  }
+})();
+
 async function main(connection) {
   const { User, Role } = connection.getModels();
 
@@ -56,25 +79,3 @@ async function main(connection) {
   console.log('Remaining Users: ', await User.count());
   console.log('Remaining Roles: ', await Role.count());
 }
-
-(async function() {
-  console.log('Creating connection...');
-
-  let connection = new SQLiteConnection({
-    models: Models,
-    // logger: console, // uncomment this to see all SQL statements sent to the database
-  });
-
-  try {
-    console.log('Starting connection...');
-    await connection.start();
-
-    console.log('Creating tables in the database...');
-    await connection.createTables(Models);
-
-    await main(connection);
-  } finally {
-    console.log('Stopping the connection...');
-    await connection.stop();
-  }
-})();
