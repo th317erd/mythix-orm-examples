@@ -1,5 +1,7 @@
 # mythix-orm-examples
 
+![Mythix](docs/mythix-logo-colored.png)
+
 Examples of using Mythix ORM.
 
 Clone this repository to run these examples.
