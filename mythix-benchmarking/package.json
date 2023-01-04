@@ -1,0 +1,23 @@
+{
+  "name": "mythix-benchmarking",
+  "version": "1.0.0",
+  "description": "To benchmark mythix-orm with sequelize and Prisma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "benchmarki",
+    "node",
+    "orm"
+  ],
+  "author": "Prasun Pal",
+  "license": "ISC",
+  "dependencies": {
+    "@spothero/eslint-plugin-spothero": "github:spothero/eslint-plugin-spothero",
+    "eslint": "^8.31.0",
+    "mythix-orm": "^1.13.3",
+    "mythix-orm-sqlite": "^1.11.1",
+    "xid-js": "^1.0.1"
+  }
+}
